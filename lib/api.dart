@@ -13,13 +13,13 @@ class Api{
 
   Future<Map> insertData(Map<dynamic,dynamic>map) async {
     var res=await http.post(Uri.parse("https://660d52b86ddfa2943b3418c7.mockapi.io/faculty"),body:map);
-    Map<dynamic,dynamic> insert= jsonDecode("res.body");
+    Map<dynamic,dynamic> insert= jsonDecode(res.body);
     return insert;
   }
 
   updateData(Map<dynamic,dynamic> map) async {
     var res= await http.put(Uri.parse("https://660d52b86ddfa2943b3418c7.mockapi.io/faculty/${map['id'].toString()}"),body: map);
-    Map<dynamic,dynamic> update=jsonDecode("res.body");
+    Map<dynamic,dynamic> update=jsonDecode(res.body);
     return update;
   }
 
